@@ -1,0 +1,295 @@
+{#{% extends "base.html" %}#}
+{#{% block title %} My store {% endblock %}#}
+{#{% block content%}#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs
+/jquery/1.4.0/jquery.min.js"></script>
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap");
+*{
+  //border: solid 1px;//
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+html,body{
+	height: 100%;
+}
+body{
+	background: url("https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80") no-repeat center center / cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.basicquestion{
+	width: 700px;
+/* 	height: 600px; */
+	background-color: rgba(0,0,0,.5);
+	border-radius: 10px;
+	border:10px solid #fff;
+	box-shadow: 0 0 60px #000;
+	backdrop-filter: blur(5px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  padding-top: 350px;
+}
+.form{
+	width: 550px;
+	color: #fff;
+}
+.form h3{
+/* 	margin-bottom: 20px;  */
+/*   padding-bottom: 20px; */
+    margin-bottom: 10px;
+	  padding-bottom: 10px;
+	  border-bottom: 1px solid #fff;
+    font-family:微軟正黑體;
+}
+.form .group{
+/* 	margin-bottom: 20px; */
+}
+.form .label{
+/* 	line-height: 2; */
+	font-family: 'Noto Sans TC', sans-serif;
+  padding-left: 20%;
+}
+.form .input{
+	width: 100%;
+	border:1px solid #aaa;
+/* 	line-height: 3; */
+	border-radius: 5px;
+}
+.form .btn-group{
+	font-size: 0;
+	margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0
+}
+.form .btn{
+	font-size: 20px;
+	border-radius: 5px;
+	border:none;
+	background-color: #138D75 ;
+	width: 190px;
+	padding: 10px 0;
+	color: #fff;
+	font-family: 'Noto Sans TC', sans-serif;
+}
+.form .btn {
+	margin: 20px;
+}
+.form-check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.all-inline{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  word-break: keep-all;
+}
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+</style>
+<script>
+    var checkBox = document.querySelector('input[ id="other" ]');
+var textInput = document.querySelector('input[id="propertytype_other" ]');
+function toggleRequired() {
+    if (textInput.hasAttribute('required') !== true) {
+        textInput.setAttribute('required','required');
+    }
+    else {
+        textInput.removeAttribute('required');
+    }
+}
+checkBox.addEventListener('change',toggleRequired,false);
+
+
+var requiredCheckboxes = $(':checkbox[required]');
+
+requiredCheckboxes.change(function(){
+    if(requiredCheckboxes.is(':checked')) {
+        requiredCheckboxes.removeAttr('required');
+    }
+    else {
+        requiredCheckboxes.attr('required', 'required');
+    }
+});
+
+var slider = document.getElementById("myRange");
+var output = document.getElementById("output");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+
+var values = ["200元以下","201-500元","501-1000元","1001-3000元","3001-5000元","5001-10000元","10000元以上"];    //values to step to
+
+var input = document.getElementById('myRange'),
+   output = document.getElementById('output');
+
+input.oninput = function(){
+    output.innerHTML = values[this.value];
+};
+input.oninpu
+</script>
+  <title>送禮達人</title>
+</head>
+<body>
+<div class="basicquestion">
+  <form class="form" method="post">
+      {% csrf_token %}
+    <h3 style="padding-left: 35%;">關於收禮者</h3>
+    <div class="group">
+      <label style="padding-left: 20%;" for="receivername">收禮者名字(或常用稱呼)</label>
+      <input type="text" class="col-sm-9 form-control" name="receivername" id="receivername" placeholder=" 請輸入名稱" required>
+      <p></p>
+    </div>
+    <div class="form-group">
+        <label style="padding-left: 20%;" for="email">Email</label>
+        <input type="email" class="col-sm-9 form-control" id="email" placeholder="Email">
+      </div>
+    <div class="group" style="display:flex">
+      <label style="padding-left: 20%;" >收禮者性別  </label>
+      <div  style="padding-left: 40px;" class="custom-control custom-radio custom-control-inline all-inline">
+        <input type="radio" id="gender1" name="gender" class="custom-control-input" required>
+        <label class="custom-control-label" for="gender1">男</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline all-inline">
+        <input type="radio" id="gender2" name="gender" class="custom-control-input">
+        <label class="custom-control-label" for="gender2">女</label>
+      </div>
+    </div>
+    <div class="group">
+      <label style="padding-left: 20%;" for="receiverage"><br>收禮者年齡</label>
+      <input type="number" min="0" max="99" step="1"  class="form-control col-sm-9" id="receiverage" name="age" placeholder="請輸入年齡" required>
+    </div>
+    <div class="group">
+      <label style="padding-left: 20%;" for="receiverrelationship"><br>與收禮者的關係</label>
+      <input type="texts" class="form-control col-sm-9" id="receiverrelationship" name="relationship" placeholder="請輸入關係(如家人 同事 朋友 情侶)" required>
+    </div>
+    <div style="padding-right: 10%;" class="group">
+      <div class="form-title">
+        <label style="padding-left: 35%;" class="form-check-label col-form-label"><br>收禮者喜好</label>
+      </div>
+        <div class="all-inline">
+          <div>
+            <label class="form-check-label col-form-label group-required" for="shopping">購物</label>
+            <input  type="checkbox" required id="shopping" name="interests">
+            </div>
+           <div>
+              <label class="form-check-label" for="sport">運動</label>
+              <input  type="checkbox" required id="sport" name="interests" >
+            </div>
+           <div>
+              <label class="form-check-label" for="travel">旅遊</label>
+              <input  type="checkbox" required id="travel" name="interests" >
+              </div>
+          <div>
+            <label class="form-check-label" for="reading">閱讀</label>
+            <input  type="checkbox" required  id="reading" name="interests" >
+          </div>
+        </div>
+        <div class="all-inline">
+          <div>
+              <label class="form-check-label" for="drama">影劇</label>
+               <input  type="checkbox" required  id="drama" name="interests" >
+          </div>
+          <div>
+             <label class="form-check-label" for="music">音樂</label>
+            <input  type="checkbox" required id="music" name="interests" >
+          </div>
+          <div>
+          <label class="form-check-label" for="game">電動</label>
+          <input  type="checkbox" required id="game" name="interests" >
+        </div>
+         <div>
+          <label class="form-check-label" for="food">美食</label>
+          <input  type="checkbox" required id="food" name="interests" >
+        </div>
+        </div>
+         <div class="all-inline">
+      <div>
+        <label  style="padding-top:20px;" class="form-check-label" for="other">其他</label>
+         <input style="padding-left: 20%;" type="checkbox" required id="other" name="interests" >
+         <input id="propertytype_other" name="interests_others" type="text" value="" placeholder="請輸入" size="20%">
+       </div>
+      </div>
+    </div>
+<div class="group">
+  <label style="padding-left: 20%;" for="budget"><br>預算</label>
+  <div class="slidecontainer col-sm-9">
+  <input type="range" min="0" max="6" value="0" step="1"class="slider" id="myRange">
+<div id="output"></div>
+
+</div>
+
+<!--
+<div class="group">
+  <label for="budget">預算</label>
+  <input type="range" class="custom-range" min="0" max="6" id="budget" name="budget" required>
+  <div class="d-flex justify-content-between">
+     <span>0</span>
+    <span>1000</span>
+    <span>3000</span>
+    <span>5000</span>
+    <span>10000</span>
+    <span>10000以上</span>
+  </div>
+</div>
+ -->
+<div class="btn-group">
+  <a class="btn" href="/index" >上一步</a>
+  <a class="btn" href="/message">下一步</a>
+</div>
+</form>
+</div>
+
+</body>
+</html>
