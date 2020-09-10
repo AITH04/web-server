@@ -42,139 +42,17 @@
 
 					<!-- Boxes -->
 						<div class="thumbnails">
-
+							{% for post in productlist %}
 							<div class="box">
-								<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="{%static 'assets/img/pic01.jpg' %}" alt="" /></a>
+								<a href="{{post.goods_ad_site}}" class="image fit"><img src="{{post.goods_image}}" alt="" /></a>
 								<div class="inner">
-									<h3>標題</h3>
-									<p>價格</p>
-									<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">點選</a>
+									<h3>{{post.goods_name}}</h3>
+									<p>{{post.goods_sale_price}}</p>
+									<a href="{{post.goods_ad_site}}" class="button fit" data-poptrox="iframe,1000x800">點選</a>
 								</div>
 							</div>
-
-							<div class="box">
-								<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="{%static 'assets/img/pic01.jpg' %}" alt="" /></a>
-								<div class="inner">
-									<h3>標題</h3>
-									<p>價格</p>
-									<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">點選</a>
-								</div>
-							</div>
-							<div class="box">
-								<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="{%static 'assets/img/pic01.jpg' %}" alt="" /></a>
-								<div class="inner">
-									<h3>標題</h3>
-									<p>價格</p>
-									<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">點選</a>
-								</div>
-							</div>
-
-							<div class="box">
-								<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="{%static 'assets/img/pic01.jpg' %}" alt="" /></a>
-								<div class="inner">
-									<h3>標題</h3>
-									<p>價格</p>
-									<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">點選</a>
-								</div>
-							</div>
-                            <div class="box">
-								<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="{%static 'assets/img/pic01.jpg' %}" alt="" /></a>
-								<div class="inner">
-									<h3>標題</h3>
-									<p>價格</p>
-									<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">點選</a>
-								</div>
-							</div>
-                            <div class="box">
-								<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="{%static 'assets/img/pic01.jpg' %}" alt="" /></a>
-								<div class="inner">
-									<h3>標題</h3>
-									<p>價格</p>
-									<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">點選</a>
-								</div>
-							</div>
-                            <div class="box">
-								<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="{%static 'assets/img/pic01.jpg' %}" alt="" /></a>
-								<div class="inner">
-									<h3>標題</h3>
-									<p>價格</p>
-									<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">點選</a>
-								</div>
-							</div>
-                            <div class="box">
-								<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="{%static 'assets/img/pic01.jpg' %}" alt="" /></a>
-								<div class="inner">
-									<h3>標題</h3>
-									<p>價格</p>
-									<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">點選</a>
-								</div>
-							</div>
-                            <div class="box">
-								<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="{%static 'assets/img/pic01.jpg' %}" alt="" /></a>
-								<div class="inner">
-									<h3>標題</h3>
-									<p>價格</p>
-									<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">點選</a>
-								</div>
-							</div>
-                            <div class="box">
-								<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="{%static 'assets/img/pic01.jpg' %}" alt="" /></a>
-								<div class="inner">
-									<h3>標題</h3>
-									<p>價格</p>
-									<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">點選</a>
-								</div>
-							</div>
-
-
-
-							<!-- <div class="box">
-								<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
-								<div class="inner">
-									<h3>Nascetur nunc varius commodo</h3>
-									<p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
-									<a href="https://youtu.be/s6zR2T9vn2c" class="button style2 fit" data-poptrox="youtube,800x400">Watch</a>
-								</div>
-							</div>
-
-							<div class="box">
-								<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
-								<div class="inner">
-									<h3>Nascetur nunc varius commodo</h3>
-									<p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
-									<a href="https://youtu.be/s6zR2T9vn2c" class="button style3 fit" data-poptrox="youtube,800x400">Watch</a>
-								</div>
-							</div>
-
-							<div class="box">
-								<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
-								<div class="inner">
-									<h3>Nascetur nunc varius commodo</h3>
-									<p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
-									<a href="https://youtu.be/s6zR2T9vn2c" class="button style2 fit" data-poptrox="youtube,800x400">Watch</a>
-								</div>
-							</div>
-
-							<div class="box">
-								<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
-								<div class="inner">
-									<h3>Nascetur nunc varius commodo</h3>
-									<p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
-									<a href="https://youtu.be/s6zR2T9vn2c" class="button style3 fit" data-poptrox="youtube,800x400">Watch</a>
-								</div>
-							</div>
-
-							<div class="box">
-								<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
-								<div class="inner">
-									<h3>Nascetur nunc varius commodo</h3>
-									<p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
-									<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">Watch</a>
-								</div>
-							</div> -->
-
+							{% endfor %}
 						</div>
-
 					</div>
 				</div>
 
