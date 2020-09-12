@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs
+/jquery/1.4.0/jquery.min.js"></script>
+  <style>
+      @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap");
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+html,body{
+	height: 100%;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #d3effb;
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+.dialogue{
+	width: 500px;
+	padding: 20px;
+	box-shadow: 0 0 10px #3e92cc;
+	background-color: #f4f5f7;
+}
+ .box{
+	width: 150px;
+	padding: 20px;
+	box-shadow: 0 0 10px #3e92cc;
+	background-color: #f4f5f7;
+  height: 100px;
+  box-sizing: border-box;
+    /* 設定footer絕對位置在底部 */
+  position: absolute;
+  bottom: 0;
+    /* 展開footer寬度 */
+}
+.user{
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: 20px;
+	font-family: 'Noto Sans TC', sans-serif;
+}
+.local {
+	justify-content: flex-end;
+}
+.user .avatar{
+	width: 60px;
+	text-align: center;
+	flex-shrink: 0;
+}
+.user .pic{
+	border-radius: 50%;
+	overflow: hidden;
+}
+.user .pic img{
+	width: 100%;
+	vertical-align: middle;
+}
+.user .txt{
+	background-color: #aaa;
+	padding: 16px;
+	border-radius: 10px;
+	position: relative;
+}
+.remote .txt{
+	margin-left: 20px;
+	margin-right: 80px;
+	color: #a1b4c5;
+	background-color: #fff;
+}
+.local .txt{
+	margin-right: 20px;
+	margin-left: 80px;
+	order: -1;
+	background-color: #3e92cc;
+	color: #FFF;
+}
+.remote .txt::before,
+.local .txt::before{
+	content: '';
+	position: absolute;
+	top: 20px;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+}
+.remote .txt::before{
+	border-right: 10px solid #fff;
+	left: -10px;
+}
+.local .txt::before{
+	border-left: 10px solid #3e92cc;
+	right: -10px;
+}
+/* .btn {
+	margin-left: 50px; */
+/* } */
+.form .btn-group{
+	font-size: 0;
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+}
+.form .btn{
+	font-size: 20px;
+	border-radius: 5px;
+	border:none;
+	background-color: #138D75 ;
+	width: 190px;
+	padding: 10px 0;
+	color: #fff;
+	font-family: 'Noto Sans TC', sans-serif;
+}
+.form .btn {
+	margin: 20px;
+}
+  </style>
+
+  <title>訊息對話</title>
+</head>
+<body>
+  <div class="dialogue">
+	<div class="user remote">
+		<div class="avatar">
+			<div class="pic">
+				<img src="https://picsum.photos/100/100?random=12">
+			</div>
+			<div class="name">小幫手</div>
+		</div>
+		<div class="txt">
+			請問您對tag1有興趣嗎? 是/否
+		</div>
+	</div>
+  </div>
+<div class="box">
+            <a class="btn btn-primary"  id="yes" value="yes" href="/product">是</a>
+			<button  class="btn btn-primary" id="no" value="no" >否</button>
+       </div>
+
+</body>
+<script>
+	var k = "<div class='user local'><div class='avatar'><div class='pic'><img src='https://picsum.photos/100/100?random=16'></div><div class='name'>您</div></div><div class='txt'>否</div></div>"
+	var h = "<div class='user remote'><div class='avatar'><div class='pic'><img src='https://picsum.photos/100/100?random=12'></div><div class='name'>小幫手</div></div><div class='txt'>請問您對tag有興趣嗎? 是/否</div></div>"
+
+	$("#no").click(function(){
+  		$(".dialogue").append(k);
+  		$(".dialogue").append(h);
+	});
+  </script>
+</html>
